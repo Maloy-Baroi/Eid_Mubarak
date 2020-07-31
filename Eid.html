@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <title>Eid Mubarak</title>
+    <style>
+        body{
+            padding: 100px;
+        }
+        .name-input{
+            padding: 5px;
+            border: 10px solid rgb(0, 255, 179);
+            border-radius: 20px;
+        }
+        .name-input:hover{
+            box-shadow: 2px 2px 10px rgb(49, 152, 160);
+        }
+        input:hover{
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.438);
+        }
+        #eid_mubarak{
+            font-family: 'Tajawal', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="mb-3 text-center name-input" id="input_div">
+        <label for="exampleFormControlInput1" class="form-label"><h1>Your Name</h1></label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example: Maloy Baroi Virat">
+        <a class="btn btn-primary mt-2" onclick="DisplayEidMubarak(document.getElementById('exampleFormControlInput1').value)">Submit</a>
+    </div>
+    <div class="eid" id="eid_mubarak" style="display: none;">
+        <div id="eid_text"></div>
+    </div>
+    <script>
+        function DisplayEidMubarak(name){
+            document.body.style.paddingRight = '50px';
+            document.body.className = 'text-center';
+            document.body.style.background = "url('Eid.png') no-repeat";
+            document.getElementById('input_div').style.display = 'none';
+            const eid_div = document.getElementById('eid_mubarak');
+            const eid_text = document.getElementById('eid_text');
+            var eid_arabic = "عيد مبارك";
+            eid_div.style.display = 'block';
+            var celebrate =  "Eid Mubarak" + " " + name;
+            eid_text.outerHTML = "<h1>"+celebrate + "<br/>" + eid_arabic + "</h1";
+
+        }
+    </script>
+</body>
+</html>
